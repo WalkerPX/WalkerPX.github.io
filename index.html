@@ -21,13 +21,13 @@
 
         .button-container {
             text-align: center;
-            margin-top: 20px;
+            margin-top: 40px; /* Increased margin for more spacing */
         }
 
         .button {
             display: inline-block;
-            padding: 10px 20px;
-            margin: 0 10px;
+            padding: 15px 30px; /* Increased padding for larger buttons */
+            margin: 0 20px; /* Increased margin for more spacing */
             color: #fff;
             background-color: #007bff;
             border: none;
@@ -35,64 +35,23 @@
             cursor: pointer;
             text-decoration: none;
         }
-
-        .spreadsheet-container {
-            margin: 20px;
-            padding: 20px;
-            background-color: #000;
-            border-radius: 5px;
-        }
-
-        table {
-            width: 100%;
-            border-collapse: collapse;
-            margin-top: 20px;
-        }
-
-        th, td {
-            padding: 10px;
-            border: 1px solid #333;
-            text-align: left;
-        }
-
-        th {
-            background-color: #007bff;
-            color: #fff;
-        }
     </style>
 </head>
 <body>
     <h1>Welcome to the Oro Spreadsheet</h1>
 
     <div class="button-container">
-        <a href="https://walkerpx.github.io/" class="button">Home</a>
-        <a href="products.html" class="button">Products</a>
         <button class="button" onclick="location.href='#section2'">Section 2</button>
         <button class="button" onclick="location.href='#section3'">Section 3</button>
     </div>
 
-    <div class="spreadsheet-container">
-        <h2>Product Details</h2>
+    <!-- Additional sections of the webpage -->
+    <div id="section2">
+        <!-- Content for Section 2 -->
+    </div>
 
-        <table>
-            <thead>
-                <tr>
-                    <th>Product</th>
-                    <th>Image</th>
-                    <th>Price</th>
-                    <th>Link</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td>Product 1</td>
-                    <td>Image 1</td>
-                    <td>$19.99</td>
-                    <td><a href="#">Link 1</a></td>
-                </tr>
-                <!-- Add more rows as needed -->
-            </tbody>
-        </table>
+    <div id="section3">
+        <!-- Content for Section 3 -->
     </div>
 </body>
 </html>
