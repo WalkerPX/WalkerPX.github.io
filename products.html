@@ -8,89 +8,84 @@
         body {
             margin: 0;
             padding: 0;
-            height: 100vh;
             background-color: #000;
             font-family: Arial, sans-serif;
             color: #fff;
-        }
-
-        h1 {
             text-align: center;
-            margin-top: 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
         }
 
-        .button-container {
-            text-align: center;
-            margin-top: 20px;
+        #productList {
+            max-width: 800px;
+            margin: 20px auto;
         }
 
-        .button {
+        .categoryButton {
             display: inline-block;
             padding: 10px 20px;
-            margin: 0 10px;
+            margin: 10px;
             color: #fff;
             background-color: #007bff;
             border: none;
             border-radius: 5px;
             cursor: pointer;
             text-decoration: none;
-        }
-
-        .spreadsheet-container {
-            margin: 20px;
-            padding: 20px;
-            background-color: #000;
-            border-radius: 5px;
-        }
-
-        table {
-            width: 100%;
-            border-collapse: collapse;
-            margin-top: 20px;
-        }
-
-        th, td {
-            padding: 10px;
-            border: 1px solid #333;
-            text-align: left;
-        }
-
-        th {
-            background-color: #007bff;
-            color: #fff;
+            font-size: 16px;
         }
     </style>
 </head>
 <body>
-    <h1>Products Page</h1>
 
-    <div class="button-container">
-        <a href="https://walkerpx.github.io/" class="button">Home</a>
-    </div>
+  <div id="productList"></div>
 
-    <!-- Full-width spreadsheet container -->
-    <div class="spreadsheet-container" style="width: 100%;">
-        <h2>Product Details</h2>
+  <div>
+    <!-- Category buttons -->
+    <button class="categoryButton" onclick="filterProducts('shoes')">Shoes</button>
+    <button class="categoryButton" onclick="filterProducts('hoodies')">Hoodies/Sweaters/Coats</button>
+    <button class="categoryButton" onclick="filterProducts('shirts')">Shirts</button>
+    <button class="categoryButton" onclick="filterProducts('pants')">Pants/Shorts</button>
+    <button class="categoryButton" onclick="filterProducts('jerseys')">Jerseys</button>
+    <button class="categoryButton" onclick="filterProducts('accessories')">Accessories</button>
+    <button class="categoryButton" onclick="filterProducts('tech')">Tech</button>
+    <button class="categoryButton" onclick="filterProducts('misc')">Misc.</button>
+  </div>
 
-        <table>
-            <thead>
-                <tr>
-                    <th>Product</th>
-                    <th>Image</th>
-                    <th>Price</th>
-                    <th>Link</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td>Product 1</td>
-                    <td>Image 1</td>
-                    <td>$19.99</td>
-                    <td><a href="#">Link 1</a></td>
-                </tr>
-                <!-- Add more rows as needed -->
-            </tbody>
-        </table>
-    </div>
+  <script>
+    function filterProducts(category) {
+      // You can implement logic here to filter and display products based on the selected category
+      console.log(`Filtering products for category: ${category}`);
+      // For now, let's just log the selected category to the console
+    }
+  </script>
+
+  <script>
+    fetch('https://docs.google.com/spreadsheets/d/1MF_wlO9kvWjiiXKM0pclngqDfk0_T569tRtB17XiPoc/edit#gid=0')
+      .then(response => response.json())
+      .then(data => {
+        const productListContainer = document.getElementById('productList');
+
+        data.forEach(product => {
+          const productContainer = document.createElement('div');
+          const productName = document.createElement('h2');
+          productName.textContent = product.Name;
+          productContainer.appendChild(productName);
+
+          const productPrice = document.createElement('p');
+          productPrice.textContent = `Price: $${product.Price}`;
+          productContainer.appendChild(productPrice);
+
+          const productImage = document.createElement('img');
+          productImage.src = product.ImageURL;
+          productImage.alt = product.Name;
+          productContainer.appendChild(productImage);
+
+          productListContainer.appendChild(productContainer);
+        });
+      })
+      .catch(error => console.error('Error fetching data:', error));
+  </script>
+
 </body>
 </html>
