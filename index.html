@@ -5,13 +5,67 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Welcome to Oro Spreadsheet</title>
     <style>
-        /* ... (previous styles remain unchanged) */
+        body {
+            margin: 0;
+            padding: 0;
+            height: 100vh;
+            background-color: #000;
+            font-family: Arial, sans-serif;
+            color: #fff;
+        }
+
+        h1 {
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        .button-container {
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        .button {
+            display: inline-block;
+            padding: 10px 20px;
+            margin: 0 10px;
+            color: #fff;
+            background-color: #007bff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            text-decoration: none;
+        }
+
+        .spreadsheet-container {
+            margin: 20px;
+            padding: 20px;
+            background-color: #000;
+            border-radius: 5px;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+
+        th, td {
+            padding: 10px;
+            border: 1px solid #333;
+            text-align: left;
+        }
+
+        th {
+            background-color: #007bff;
+            color: #fff;
+        }
     </style>
 </head>
 <body>
     <h1>Welcome to the Oro Spreadsheet</h1>
 
     <div class="button-container">
+        <a href="https://walkerpx.github.io/" class="button">Home</a>
         <a href="products.html" class="button">Products</a>
         <button class="button" onclick="location.href='#section2'">Section 2</button>
         <button class="button" onclick="location.href='#section3'">Section 3</button>
@@ -40,26 +94,5 @@
             </tbody>
         </table>
     </div>
-
-    <div id="section2">
-        <!-- Content for Section 2 -->
-    </div>
-
-    <div id="section3">
-        <!-- Content for Section 3 -->
-    </div>
-
-    <!-- Home button linking back to index.html -->
-    <div style="text-align: center; margin-top: 20px;">
-        <a href="index.html" class="button">Home</a>
-    </div>
 </body>
-
-    <!-- ... (previous HTML remains unchanged) -->
-
-<!-- Home button linking back to index.html -->
-<div style="position: absolute; top: 10px; left: 10px;">
-    <a href="index.html" class="button">Home</a>
-</div>
-
 </html>
