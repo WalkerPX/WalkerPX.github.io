@@ -38,7 +38,10 @@
 </head>
 <body>
 
-  <div id="productList"></div>
+  <h1>Products</h1>
+
+  <!-- Home button linking to the home page -->
+  <a href="index.html">Home</a>
 
   <div>
     <!-- Category buttons -->
@@ -52,16 +55,16 @@
     <button class="categoryButton" onclick="filterProducts('misc')">Misc.</button>
   </div>
 
-  <script>
-    function filterProducts(category) {
-      // You can implement logic here to filter and display products based on the selected category
-      console.log(`Filtering products for category: ${category}`);
-      // For now, let's just log the selected category to the console
-    }
-  </script>
+  <div id="productList"></div>
 
   <script>
-    fetch('https://docs.google.com/spreadsheets/d/1MF_wlO9kvWjiiXKM0pclngqDfk0_T569tRtB17XiPoc/edit#gid=0')
+    function filterProducts(category) {
+      console.log(`Filtering products for category: ${category}`);
+      // Implement logic to filter and display products based on the selected category
+      // For now, let's just log the selected category to the console
+    }
+
+    fetch('https://docs.google.com/spreadsheets/d/1BPmWsi-U7vLJiSA6WHqX8VSjeG3xPgpHNllOD0f3iXE/edit#gid=0')
       .then(response => response.json())
       .then(data => {
         const productListContainer = document.getElementById('productList');
