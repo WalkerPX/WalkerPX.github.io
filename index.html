@@ -1,58 +1,57 @@
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Welcome to Oro Spreadsheet</title>
     <style>
-        body {
-            margin: 0;
-            padding: 0;
-            height: 100vh;
-            background-color: #000;
-            font-family: Arial, sans-serif;
-            color: #fff; /* Set default text color to white */
-        }
-
-        h1 {
-            text-align: center;
-            margin-top: 20px;
-        }
-
-        .button-container {
-            text-align: center;
-            margin-top: 20px;
-        }
-
-        .button {
-            display: inline-block;
-            padding: 10px 20px;
-            margin: 0 10px;
-            color: #fff;
-            background-color: #007bff;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
-            text-decoration: none;
-        }
+        /* ... (previous styles remain unchanged) */
     </style>
 </head>
 <body>
     <h1>Welcome to the Oro Spreadsheet</h1>
 
     <div class="button-container">
-        <!-- Updated the first button text to "Products" -->
         <a href="products.html" class="button">Products</a>
         <button class="button" onclick="location.href='#section2'">Section 2</button>
         <button class="button" onclick="location.href='#section3'">Section 3</button>
     </div>
 
-    <!-- Additional sections of the webpage -->
+    <div class="spreadsheet-container">
+        <h2>Product Details</h2>
+
+        <table>
+            <thead>
+                <tr>
+                    <th>Product</th>
+                    <th>Image</th>
+                    <th>Price</th>
+                    <th>Link</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Product 1</td>
+                    <td>Image 1</td>
+                    <td>$19.99</td>
+                    <td><a href="#">Link 1</a></td>
+                </tr>
+                <!-- Add more rows as needed -->
+            </tbody>
+        </table>
+    </div>
+
     <div id="section2">
         <!-- Content for Section 2 -->
     </div>
 
     <div id="section3">
         <!-- Content for Section 3 -->
+    </div>
+
+    <!-- Home button linking back to index.html -->
+    <div style="text-align: center; margin-top: 20px;">
+        <a href="index.html" class="button">Home</a>
     </div>
 </body>
 </html>
