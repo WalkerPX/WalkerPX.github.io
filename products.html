@@ -15,17 +15,25 @@
             display: flex;
             flex-direction: column;
             align-items: center;
+            opacity: 0; /* Start with the entire body transparent */
+            animation: fadeIn 1.5s ease-out forwards; /* Add fade-in animation to the body */
         }
 
-        #productList {
-            max-width: 800px;
-            margin: 20px auto;
+        h1 {
+            font-size: 2em;
         }
 
-        .categoryButton {
-            display: inline-block;
-            padding: 10px 20px;
+        .buttonContainer {
+            display: flex;
+            justify-content: center; /* Center the buttons horizontally */
+            margin-top: 20px;
+            opacity: 0; /* Start with buttons transparent */
+            animation: fadeInButtons 1s ease-out forwards; /* Add fade-in animation to buttons */
+        }
+
+        button {
             margin: 10px;
+            padding: 15px 30px;
             color: #fff;
             background-color: #007bff;
             border: none;
@@ -33,29 +41,47 @@
             cursor: pointer;
             text-decoration: none;
             font-size: 16px;
+            opacity: 0; /* Start with buttons transparent */
+            animation: fadeInButtons 1s ease-out forwards; /* Add fade-in animation to buttons */
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+
+        @keyframes fadeInButtons {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
         }
     </style>
 </head>
 <body>
 
-  <h1>Products</h1>
+  <h1>Welcome to the Oro Spreadsheet</h1>
 
-  <!-- Home button linking to the home page -->
-  <a href="index.html">Home</a>
-
-  <div>
+  <div class="buttonContainer">
+    <!-- Home button linking to the home page -->
+    <button onclick="location.href='index.html'">Home</button>
     <!-- Category buttons -->
-    <button class="categoryButton" onclick="filterProducts('shoes')">Shoes</button>
-    <button class="categoryButton" onclick="filterProducts('hoodies')">Hoodies/Sweaters/Coats</button>
-    <button class="categoryButton" onclick="filterProducts('shirts')">Shirts</button>
-    <button class="categoryButton" onclick="filterProducts('pants')">Pants/Shorts</button>
-    <button class="categoryButton" onclick="filterProducts('jerseys')">Jerseys</button>
-    <button class="categoryButton" onclick="filterProducts('accessories')">Accessories</button>
-    <button class="categoryButton" onclick="filterProducts('tech')">Tech</button>
-    <button class="categoryButton" onclick="filterProducts('misc')">Misc.</button>
+    <button onclick="filterProducts('shoes')">Shoes</button>
+    <button onclick="filterProducts('hoodies')">Hoodies</button>
+    <button onclick="filterProducts('shirts')">Shirts</button>
+    <button onclick="filterProducts('pants')">Pants</button>
+    <button onclick="filterProducts('jerseys')">Jerseys</button>
+    <button onclick="filterProducts('accessories')">Accessories</button>
+    <button onclick="filterProducts('tech')">Tech</button>
+    <button onclick="filterProducts('misc')">Misc</button>
+    <!-- Add other buttons here -->
   </div>
-
-  <div id="productList"></div>
 
   <script>
     function filterProducts(category) {
@@ -64,30 +90,12 @@
       // For now, let's just log the selected category to the console
     }
 
-    fetch('https://docs.google.com/spreadsheets/d/e/2PACX-1vRnEah20KRpy_HI8qZXxTq-x9u3MmdWFJd7ZG9LXcfH0nZWCTh5yX6kMfycGPB8jOi87XBnKCoCbGBF/pubhtml)
-      .then(response => response.json())
-      .then(data => {
-        const productListContainer = document.getElementById('productList');
-
-        data.forEach(product => {
-          const productContainer = document.createElement('div');
-          const productName = document.createElement('h2');
-          productName.textContent = product.Name;
-          productContainer.appendChild(productName);
-
-          const productPrice = document.createElement('p');
-          productPrice.textContent = `Price: $${product.Price}`;
-          productContainer.appendChild(productPrice);
-
-          const productImage = document.createElement('img');
-          productImage.src = product.ImageURL;
-          productImage.alt = product.Name;
-          productContainer.appendChild(productImage);
-
-          productListContainer.appendChild(productContainer);
-        });
-      })
-      .catch(error => console.error('Error fetching data:', error));
+    // Reset the animation state when the page loads
+    document.addEventListener('DOMContentLoaded', function () {
+        document.body.style.animation = 'none';
+        void document.body.offsetWidth; // Trigger reflow
+        document.body.style.animation = null;
+    });
   </script>
 
 </body>
