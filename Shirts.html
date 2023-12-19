@@ -1,1 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shirts - Oro Spreadsheet</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            background-color: #000;
+            font-family: Arial, sans-serif;
+            color: #fff;
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            opacity: 0; /* Start with the entire body transparent */
+            animation: fadeIn 1.5s ease-out forwards; /* Add fade-in animation to the body */
+        }
 
+        h1 {
+            font-size: 2em;
+            color: #fff; /* White header text */
+        }
+
+        .buttonContainer {
+            display: flex;
+            justify-content: center; /* Center the buttons horizontally */
+            margin-top: 20px;
+            opacity: 0; /* Start with buttons transparent */
+            animation: fadeInButtons 1s ease-out forwards; /* Add fade-in animation to buttons */
+        }
+
+        button {
+            margin: 10px;
+            padding: 15px 30px;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            text-decoration: none;
+            font-size: 16px;
+            opacity: 0; /* Start with buttons transparent */
+            animation: fadeInButtons 1s ease-out forwards; /* Add fade-in animation to buttons */
+        }
+
+        .category-container {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-end; /* Align content to the right */
+            margin-top: 20px;
+            opacity: 0; /* Start with content transparent */
+            animation: fadeInContent 1s ease-out forwards; /* Add fade-in animation to content */
+        }
+
+        .category-header {
+            font-size: 1.5em;
+            margin-bottom: 20px;
+            color: #fff; /* White header text */
+        }
+
+        .category-content {
+            background-color: #000;
+            padding: 20px;
+            text-align: left; /* Align text to the left */
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+
+        @keyframes fadeInButtons {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+
+        @keyframes fadeInContent {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+    </style>
+</head>
+<body>
+
+  <h1>Shirts</h1>
+
+  <div class="buttonContainer">
+    <!-- Home button linking to the home page -->
+    <button onclick="location.href='index.html'">Home</button>
+    <!-- Add other buttons here -->
+  </div>
+
+  <div class="category-container">
+    <div class="category-header">
+    <div class="category-content">
+      <!-- Add content for the category here -->
+     
+      <!-- You can customize this content based on your needs -->
+    </div>
+  </div>
+
+  <script>
+    // Reset the animation state when the page loads
+    document.addEventListener('DOMContentLoaded', function () {
+        document.body.style.animation = 'none';
+        void document.body.offsetWidth; // Trigger reflow
+        document.body.style.animation = null;
+
+        document.querySelector('.buttonContainer').style.opacity = 0;
+        document.querySelector('.buttonContainer').style.animation = 'none';
+        void document.querySelector('.buttonContainer').offsetWidth; // Trigger reflow
+        document.querySelector('.buttonContainer').style.animation = null;
+
+        document.querySelector('.category-container').style.opacity = 0;
+        document.querySelector('.category-container').style.animation = 'none';
+        void document.querySelector('.category-container').offsetWidth; // Trigger reflow
+        document.querySelector('.category-container').style.animation = null;
+    });
+  </script>
+
+</body>
+</html>
