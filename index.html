@@ -3,56 +3,88 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Welcome to Oro Spreadsheet</title>
+    <title>Home - Oro Spreadsheet</title>
     <style>
         body {
             margin: 0;
             padding: 0;
-            height: 100vh;
             background-color: #000;
             font-family: Arial, sans-serif;
             color: #fff;
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            animation: fadeIn 1.5s ease-out; /* Add fade-in animation to the body */
         }
 
         h1 {
-            text-align: center;
+            margin-top: 150px;
+            font-size: 3em;
+            animation: bounceUp 1s ease-out; /* Add bounce-up animation to the title */
+        }
+
+        .buttonContainer {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
             margin-top: 20px;
+            opacity: 0; /* Start with buttons transparent */
+            animation: fadeInButtons 1s ease-out forwards; /* Add fade-in animation to buttons */
         }
 
-        .button-container {
-            text-align: center;
-            margin-top: 40px; /* Increased margin for more spacing */
-        }
-
-        .button {
-            display: inline-block;
-            padding: 15px 30px; /* Increased padding for larger buttons */
-            margin: 0 20px; /* Increased margin for more spacing */
+        button {
+            margin: 10px;
+            padding: 15px 30px;
             color: #fff;
             background-color: #007bff;
             border: none;
             border-radius: 5px;
             cursor: pointer;
             text-decoration: none;
+            font-size: 16px;
+        }
+
+        @keyframes bounceUp {
+            0% {
+                transform: translateY(0);
+            }
+            50% {
+                transform: translateY(-20px);
+            }
+            100% {
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+
+        @keyframes fadeInButtons {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
         }
     </style>
 </head>
 <body>
-    <h1>Welcome to the Oro Spreadsheet</h1>
 
-    <div class="button-container">
-        <a href="index.html" class="button">Home</a>
-        <a href="products.html" class="button">Products</a>
-        <a href="affiliate-links.html" class="button">Affiliate Links</a> <!-- New button for Affiliate Links -->
-    </div>
+  <h1>Welcome to the Oro Spreadsheet</h1>
 
-    <!-- Additional sections of the webpage -->
-    <div id="section2">
-        <!-- Content for Section 2 -->
-    </div>
+  <div class="buttonContainer">
+    <!-- Home button linking to the home page -->
+    <button onclick="location.href='index.html'">Home</button>
+    <!-- Add other buttons here -->
+  </div>
 
-    <div id="section3">
-        <!-- Content for Section 3 -->
-    </div>
 </body>
 </html>
