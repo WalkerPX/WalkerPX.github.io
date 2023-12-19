@@ -88,5 +88,15 @@
     <button onclick="location.href='affiliate.html'">Affiliate</button>
   </div>
 
+  <script>
+    // Reset the animation state when the page loads
+    document.addEventListener('DOMContentLoaded', function () {
+        document.querySelector('.buttonContainer').style.opacity = 0;
+        document.querySelector('.buttonContainer').style.animation = 'none';
+        void document.querySelector('.buttonContainer').offsetWidth; // Trigger reflow
+        document.querySelector('.buttonContainer').style.animation = null;
+    });
+  </script>
+
 </body>
 </html>
