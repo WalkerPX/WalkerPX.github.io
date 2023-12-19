@@ -14,49 +14,70 @@
             text-align: center;
             display: flex;
             flex-direction: column;
-            justify-content: center;
             align-items: center;
+            opacity: 0; /* Start with the entire body transparent */
+            animation: fadeIn 1.5s ease-out forwards; /* Add fade-in animation to the body */
         }
 
-        h1, p {
-            margin: 20px;
-            max-width: 600px;
-            color: #fff;
+        h1 {
+            font-size: 2em;
+            margin-top: 20px;
+        }
+
+        .buttonContainer {
+            display: flex;
+            justify-content: center; /* Center the buttons horizontally */
+            margin-top: 20px;
+            opacity: 0; /* Start with buttons transparent */
+            animation: fadeInButtons 1s ease-out forwards; /* Add fade-in animation to buttons */
         }
 
         a {
-            display: inline-block;
-            padding: 15px 30px;
-            margin-top: 20px;
-            color: #fff;
-            background-color: #007bff;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
-            text-decoration: none;
+            color: #007bff; /* Blue hyperlink color */
+            text-decoration: underline; /* Underline the hyperlink */
+            font-size: 16px;
         }
 
-        /* Styling for the QR code image */
-        #qrCode {
-            width: 200px; /* Adjust the size as needed */
-            height: auto;
-            margin-top: 20px;
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+
+        @keyframes fadeInButtons {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
         }
     </style>
 </head>
 <body>
-    <h1>Affiliate Links</h1>
 
+  <h1>Affiliate Links</h1>
+
+  <div class="buttonContainer">
     <!-- Home button linking to the home page -->
-    <a href="index.html">Home</a>
+    <button onclick="location.href='index.html'">Home</button>
+    <!-- New hyperlink for the word "here" -->
+    <a href="https://pandabuy.allapp.link/cm01il8gpf6qoog02770">here</a>
+    <!-- Add other buttons here -->
+  </div>
 
-    <p>
-        Hello! Thank you for using my website! As I continue to update and improve this for all of you, please use my affiliate link <a href="https://pandabuy.allapp.link/cm01il8gpf6qoog02770" target="_blank" style="color: #fff;">here</a> or my affiliate code: <strong style="color: #fff;">7CP7FVD5K</strong> when placing orders!
-        This should only take a second of your time but will greatly help me in giving you all the best experience possible. Thank you!
-    </p>
-
-    <!-- QR code image -->
-    <img id="qrCode" src="qrcode.png" alt="QR Code">
+  <script>
+    // Reset the animation state when the page loads
+    document.addEventListener('DOMContentLoaded', function () {
+        document.querySelector('.buttonContainer').style.opacity = 0;
+        document.querySelector('.buttonContainer').style.animation = 'none';
+        void document.querySelector('.buttonContainer').offsetWidth; // Trigger reflow
+        document.querySelector('.buttonContainer').style.animation = null;
+    });
+  </script>
 
 </body>
 </html>
