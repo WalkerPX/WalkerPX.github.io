@@ -15,7 +15,8 @@
             display: flex;
             flex-direction: column;
             align-items: center;
-            animation: fadeIn 1.5s ease-out; /* Add fade-in animation to the body */
+            opacity: 0; /* Start with the entire body transparent */
+            animation: fadeIn 1.5s ease-out forwards; /* Add fade-in animation to the body */
         }
 
         h1 {
@@ -43,6 +44,8 @@
             cursor: pointer;
             text-decoration: none;
             font-size: 16px;
+            opacity: 0; /* Start with buttons transparent */
+            animation: fadeInButtons 1s ease-out forwards; /* Add fade-in animation to buttons */
         }
 
         @keyframes bounceUp {
@@ -83,9 +86,9 @@
   <div class="buttonContainer">
     <!-- Home button linking to the home page -->
     <button onclick="location.href='index.html'">Home</button>
+    <!-- Affiliate button linking to affiliate-links.html -->
+    <button onclick="location.href='affiliate-links.html'">Affiliate</button>
     <!-- Add other buttons here -->
-    <button onclick="location.href='products.html'">Products</button>
-    <button onclick="location.href='affiliate.html'">Affiliate</button>
   </div>
 
   <script>
