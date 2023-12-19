@@ -20,15 +20,14 @@
         }
 
         h1 {
-            margin-top: 150px;
-            font-size: 3em;
-            animation: bounceUp 1s ease-out; /* Add bounce-up animation to the title */
+            font-size: 2em;
+            margin-top: 20px;
         }
 
         .buttonContainer {
             display: flex;
-            flex-direction: column;
-            align-items: center;
+            justify-content: center; /* Center the buttons horizontally */
+            flex-direction: column; /* Stack buttons vertically */
             margin-top: 20px;
             opacity: 0; /* Start with buttons transparent */
             animation: fadeInButtons 1s ease-out forwards; /* Add fade-in animation to buttons */
@@ -44,20 +43,6 @@
             cursor: pointer;
             text-decoration: none;
             font-size: 16px;
-            opacity: 0; /* Start with buttons transparent */
-            animation: fadeInButtons 1s ease-out forwards; /* Add fade-in animation to buttons */
-        }
-
-        @keyframes bounceUp {
-            0% {
-                transform: translateY(0);
-            }
-            50% {
-                transform: translateY(-20px);
-            }
-            100% {
-                transform: translateY(0);
-            }
         }
 
         @keyframes fadeIn {
@@ -84,12 +69,14 @@
   <h1>Welcome to the Oro Spreadsheet</h1>
 
   <div class="buttonContainer">
+    <!-- New button for Pandabuy Basics link -->
+    <button onclick="location.href='https://WalkerPX.github.io/PandabuyBasics.html'">Pandabuy Basics</button>
     <!-- Products button linking to the products page -->
     <button onclick="location.href='products.html'">Products</button>
     <!-- Affiliate Links button linking to the affiliate-links page -->
     <button onclick="location.href='affiliate-links.html'">Affiliate Links</button>
-    <!-- New button for PandabuyBasics link -->
-    <button onclick="location.href='https://WalkerPX.github.io/PandabuyBasics.html'">Pandabuy Basics</button>
+    <!-- New button for My Hauls link -->
+    <button onclick="location.href='https://WalkerPX.github.io/MyHauls.html'">My Hauls</button>
     <!-- Add other buttons here -->
   </div>
 
