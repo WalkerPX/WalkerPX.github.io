@@ -45,6 +45,11 @@
             animation: fadeInButtons 1s ease-out forwards; /* Add fade-in animation to buttons */
         }
 
+        #spreadsheet-container {
+            width: 100%;
+            height: 600px; /* Adjust the height as needed */
+        }
+
         @keyframes fadeIn {
             from {
                 opacity: 0;
@@ -81,6 +86,11 @@
     <button onclick="location.href='https://WalkerPX.github.io/Tech.html'">Tech</button>
     <button onclick="location.href='https://WalkerPX.github.io/MISC.html'">Misc</button>
     <!-- Add other buttons here -->
+  </div>
+
+  <!-- Embedded Google Sheets Spreadsheet -->
+  <div id="spreadsheet-container">
+    <iframe width="100%" height="100%" src="https://docs.google.com/spreadsheets/d/e/2PACX-1vRnEah20KRpy_HI8qZXxTq-x9u3MmdWFJd7ZG9LXcfH0nZWCTh5yX6kMfycGPB8jOi87XBnKCoCbGBF/pubhtml?widget=true&amp;headers=false"></iframe>
   </div>
 
   <script>
