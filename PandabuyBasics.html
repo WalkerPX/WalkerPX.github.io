@@ -11,45 +11,71 @@
             background-color: #000;
             font-family: Arial, sans-serif;
             color: #fff;
+            text-align: center;
+            opacity: 0;
+            animation: fadeIn 1.5s ease-out forwards;
         }
 
         h1 {
             font-size: 2em;
+            margin-bottom: 20px;
         }
 
         h2 {
             font-size: 1.5em;
             margin-top: 20px;
+            opacity: 0;
+            animation: fadeInHeaders 1s ease-out forwards;
         }
 
         p {
             font-size: 1em;
             margin-top: 10px;
+            opacity: 0;
+            animation: fadeInParagraphs 1s ease-out forwards;
         }
 
-        .home-button {
-            font-size: 16px;
-            margin-bottom: 20px;
-            color: #fff;
-            text-decoration: underline;
-            cursor: pointer;
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+
+        @keyframes fadeInHeaders {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+
+        @keyframes fadeInParagraphs {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
         }
     </style>
 </head>
 <body>
-
-  <a class="home-button" href="index.html">Home</a>
 
   <h1>Pandabuy Basics</h1>
 
   <h2>What is Pandabuy?</h2>
   <p>Pandabuy is an e-commerce platform that was launched in 2017. The platform specializes in providing high-quality products at competitive prices. By allowing consumers to shop with Chinese providers, it enables customers to buy products at a more affordable price. The platform acts as a middleman for shoppers in other parts of the world to connect with Chinese manufacturers.</p>
 
-  <h2>How Does PandaBuy Work?</h2>
+
+  <h2>How do I use Pandabuy?</h2>
   <p>PandaBuy works by connecting customers with Chinese suppliers. These suppliers sell anything from clothes, to shoes, to electronics. PandaBuy itself has a very simple platform to navigate where users can browse through products and purchase them. The suppliers then ship the products directly to the PandaBuy warehouse where their agents can take photos of the product to give to the user. The user can then decide if they would like to ship the product to their residence. The agents handle all of the ordering, shipping, and negotiating with the suppliers on your behalf.</p>
 
-  <h2>How to Use PandaBuy</h2>
-  <ol>
+  <h2>How to ship:</h2>
+ <ol>
     <li>Create an Account: The first step is to create an account on PandaBuy. You can sign up using your email address, Facebook, or Google account.</li>
     <li>Browse Products: Once you've created an account, you can start browsing products on the platform or what is more commonly used which is PandaBuy spreadsheets.</li>
     <li>Choose a Product: When you find a product that you're interested in, click on it to view the product details, including price, shipping options, and delivery time.</li>
@@ -59,8 +85,14 @@
     <li>Place Your Order: Once you've chosen your payment method, click on the "Place Order" button to complete your purchase. You will receive a confirmation email with your order details.</li>
     <li>Track Your Order: PandaBuy will provide you with a tracking number, which you can use to track your order's progress. You can log in to your account and check the order status to see when it has shipped and when you can expect to receive it.</li>
   </ol>
-
-  <!-- Add other sections as needed -->
+    
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+        document.body.style.animation = 'none';
+        void document.body.offsetWidth; // Trigger reflow
+        document.body.style.animation = null;
+    });
+  </script>
 
 </body>
 </html>
