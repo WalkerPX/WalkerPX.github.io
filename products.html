@@ -95,30 +95,28 @@
 <iframe width="100%" height="100%" src="https://docs.google.com/spreadsheets/d/e/2PACX-1vRnEah20KRpy_HI8qZXxTq-x9u3MmdWFJd7ZG9LXcfH0nZWCTh5yX6kMfycGPB8jOi87XBnKCoCbGBF/pubhtml?widget=true&amp;headers=false"></iframe>
   </div>
 
-  <script>
-    // Reset the animation state when the page loads
-    document.addEventListener('DOMContentLoaded', function () {
-        document.body.style.animation = 'none';
-        void document.body.offsetWidth; // Trigger reflow
-        document.body.style.animation = null;
-    });
+ <script>
+  // Reset the animation state when the page loads
+  document.addEventListener('DOMContentLoaded', function () {
+    document.body.style.animation = 'none';
+    void document.body.offsetWidth; // Trigger reflow
+    document.body.style.animation = null;
+  });
 
-      <script>
   // Search function
   document.getElementById('searchInput').addEventListener('input', function () {
-      var searchTerm = this.value.toLowerCase();
-      var iframe = document.querySelector('iframe');
-      var iframeDocument = iframe.contentDocument || iframe.contentWindow.document;
-      var cells = iframeDocument.querySelectorAll('table tbody td');
+    var searchTerm = this.value.toLowerCase();
+    var iframe = document.querySelector('iframe');
+    var iframeDocument = iframe.contentDocument || iframe.contentWindow.document;
+    var cells = iframeDocument.querySelectorAll('table tbody td');
 
-      cells.forEach(function (cell) {
-          var textContent = cell.textContent || cell.innerText;
-          var cellVisible = textContent.toLowerCase().includes(searchTerm);
-          cell.style.display = cellVisible ? 'table-cell' : 'none';
-      });
+    cells.forEach(function (cell) {
+      var textContent = cell.textContent || cell.innerText;
+      var cellVisible = textContent.toLowerCase().includes(searchTerm);
+      cell.style.display = cellVisible ? 'table-cell' : 'none';
+    });
   });
 </script>
-  </script>
 
 </body>
  
