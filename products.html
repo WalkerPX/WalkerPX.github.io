@@ -116,6 +116,22 @@
       cell.style.display = cellVisible ? 'table-cell' : 'none';
     });
   });
+
+     document.getElementById('searchInput').addEventListener('keyup', function (event) {
+  // Check if the key pressed is "Enter" (key code 13)
+  if (event.keyCode === 13) {
+    // Perform the search logic here
+    var searchTerm = this.value.toLowerCase();
+    var cells = spreadsheetContainer.querySelectorAll('table tbody td');
+
+    cells.forEach(function (cell) {
+      var textContent = cell.textContent || cell.innerText;
+      var cellVisible = textContent.toLowerCase().includes(searchTerm);
+      cell.style.display = cellVisible ? 'table-cell' : 'none';
+    });
+  }
+});
+
 </script>
 
 </body>
