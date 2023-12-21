@@ -100,6 +100,22 @@
         void document.body.offsetWidth; // Trigger reflow
         document.body.style.animation = null;
     });
+
+      <script>
+  // Search function
+  document.getElementById('searchInput').addEventListener('input', function () {
+      var searchTerm = this.value.toLowerCase();
+      var iframe = document.querySelector('iframe');
+      var iframeDocument = iframe.contentDocument || iframe.contentWindow.document;
+      var cells = iframeDocument.querySelectorAll('table tbody td');
+
+      cells.forEach(function (cell) {
+          var textContent = cell.textContent || cell.innerText;
+          var cellVisible = textContent.toLowerCase().includes(searchTerm);
+          cell.style.display = cellVisible ? 'table-cell' : 'none';
+      });
+  });
+</script>
   </script>
 
 </body>
